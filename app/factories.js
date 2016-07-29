@@ -1,12 +1,15 @@
 angular
   .module('aprilFools')
-  .factory('prankFactory', ['$http', function($http){
+  .factory('prankFactory', ['$http','$q', function($http, $q){
     return  {
-      get: $http.get('https://appjamserv.herokuapp.com/')
+      get: function () {
+
+      return $http.get('https://appjamserv.herokuapp.com/')
         .then(function(data){
           let results = data.data
-          return results
-        }),
+          return $q.resolve(results)
+        })
+      },
       random: (array)=> {
         return array[Math.floor(Math.random() * array.length)];
     },
@@ -14,7 +17,10 @@ angular
         $http.post('https://appjamserv.herokuapp.com/', body)
       },
       delete: (id) => {
-        $http.delete('https://appjamserv.herokuapp.com/' + id)
+        return $http.delete('https://appjamserv.herokuapp.com/' + id)
+      },
+      put: (body) => {
+        return $http.put('https://appjamserv.herokuapp.com/' + body.id, body)
       }
   }
   }])
