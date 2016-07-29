@@ -7,7 +7,7 @@ angular
       $scope.view.visible = true
     }
     $scope.generate = function () {
-      prankFactory.get
+      prankFactory.get()
       .then(function(data){
         $scope.view.data = prankFactory.random(data)
       })
