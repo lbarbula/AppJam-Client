@@ -2,6 +2,10 @@
 <div class="col">
     <a class='btn' href='#demoModal' modal>Show Modal</a>
 </div>
+<div ng-repeat="prank in view.data">
+  <p>{{prank.title}}</p>
+  <p>{{prank.description}}</p>
+</div>
 <!-- Modal Structure -->
 <div id="demoModal" class="modal">
     <div class="modal-content">
