@@ -13,10 +13,8 @@ angular
         console.log($scope.view.data)
       })
     }
-    prankFactory.get
-    .then(function(data){
-      console.log(data)
-      $scope.view.data = prankFactory.random(data)
-      console.log($scope.view.data)
-    })  
+    $scope.addPrank = function (body) {
+      prankFactory.post()
+      $scope.prank = {}
+    }
   }])

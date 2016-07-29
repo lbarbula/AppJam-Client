@@ -23,14 +23,16 @@
 <!-- Modal Structure -->
 <div id="demoModal" class="modal">
     <div class="modal-content">
+      <form>
         <div input-field>
-            <input type="text" ng-model="dummyInputs.inputFieldInput" length="150">
+            <input type="text" ng-model="prank.title" length="150">
             <label>Prank Title</label>
         </div>
         <div input-field>
-            <textarea ng-model="dummyInputs.textAreaInput" class="materialize-textarea"></textarea>
+            <textarea ng-model="prank.description" class="materialize-textarea"></textarea>
             <label>Prank Description</label>
         </div>
-        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red" ng-click="addPrank(prank)"><i class="material-icons">add</i></a>
     </div>
+    </form>
     <div class="modal-footer">

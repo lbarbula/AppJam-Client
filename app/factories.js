@@ -9,6 +9,9 @@ angular
         }),
       random: (array)=> {
         return array[Math.floor(Math.random() * array.length)];
-    }
+    },
+      post: (body) => {
+        $http.post('https://appjamserv.herokuapp.com/', body)
+      }
   }
   }])
