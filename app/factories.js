@@ -12,6 +12,9 @@ angular
     },
       post: (body) => {
         $http.post('https://appjamserv.herokuapp.com/', body)
+      },
+      delete: (id) => {
+        $http.delete('https://appjamserv.herokuapp.com/' + id)
       }
   }
   }])
